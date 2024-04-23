@@ -5,10 +5,10 @@ import (
 	"io"
 	"strings"
 
-	"github.com/danielgtaylor/restish/bulk"
+	"github.com/loicalleyne/restish/bulk"
 	"github.com/loicalleyne/restish/cli"
-	"github.com/danielgtaylor/restish/oauth"
-	"github.com/danielgtaylor/restish/openapi"
+	"github.com/loicalleyne/restish/oauth"
+	"github.com/loicalleyne/restish/openapi"
 )
 
 var version string = "embedded"
