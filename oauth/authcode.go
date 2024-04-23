@@ -16,7 +16,7 @@ import (
 
 	"context"
 
-	"github.com/danielgtaylor/loicalleyne/cli"
+	"github.com/loicalleyne/restish/cli"
 	"github.com/mattn/go-isatty"
 	"golang.org/x/oauth2"
 )
