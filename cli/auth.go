@@ -12,6 +12,7 @@ import (
 	"syscall"
 
 	"golang.org/x/term"
+	"github.com/spf13/viper"
 )
 
 // AuthParam describes an auth input parameter for an AuthHandler.
