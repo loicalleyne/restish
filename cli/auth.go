@@ -192,4 +192,5 @@ func (a *ExternalOverrideAuth) OnRequest(req *http.Request, key string, params m
 	default:
 		req.Header.Add("Authorization", token)
 	}
-	r
+	return nil
+}
