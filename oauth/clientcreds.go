@@ -6,7 +6,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/danielgtaylor/restish/cli"
+	"github.com/loicalleyne/restish/cli"
 	"golang.org/x/oauth2/clientcredentials"
 )
 
