@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/danielgtaylor/restish/bulk"
-	"github.com/danielgtaylor/restish/cli"
+	"github.com/loicalleyne/restish/cli"
 	"github.com/danielgtaylor/restish/oauth"
 	"github.com/danielgtaylor/restish/openapi"
 )
