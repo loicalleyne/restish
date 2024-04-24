@@ -3,6 +3,7 @@ package embedded
 import (
 	"fmt"
 	"io"
+	"os"
 
 	"github.com/loicalleyne/restish/bulk"
 	"github.com/loicalleyne/restish/cli"
@@ -19,7 +20,10 @@ func Restish(appName string, args []string, overrideAuthPrefix, overrideAuthToke
 	default:
 		cli.Init(appName, version)
 	}
-
+	osArgsBackup := os.Args
+	defer func() { os.Args = osArgsBackup }()
+	os.Args = []string{"embedded"}
+	os.Args = append(os.Args, args...)
 	// Register default encodings, content type handlers, and link parsers.
 	cli.Defaults()
 
