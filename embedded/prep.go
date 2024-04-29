@@ -14,7 +14,12 @@ import (
 
 var version string = "embedded"
 
-func Restish(appName string, args []string, overrideAuthPrefix, overrideAuthToken string, newOut, newErr io.Writer) error {
+const (
+	WriterFormatDefault = iota
+	WriterFormatFilteredRawJSON
+)
+
+func Restish(appName string, args []string, overrideAuthPrefix, overrideAuthToken string, newOut, newErr io.Writer, writerFormat int) error {
 	switch appName {
 	case "":
 		return fmt.Errorf("no app name provided")
@@ -48,6 +53,12 @@ func Restish(appName string, args []string, overrideAuthPrefix, overrideAuthToke
 	if newErr != nil {
 		cli.Root.SetErr(newErr)
 		cli.Stderr = newErr
+	}
+	switch writerFormat {
+	case WriterFormatFilteredRawJSON:
+		cli.Formatter = NewFilteredRawJSONFormatter(true, false)
+	default:
+		// leave unchanged
 	}
 	// Run the CLI, parsing arguments, making requests, and printing responses.
 	if err := cli.Run(); err != nil {
